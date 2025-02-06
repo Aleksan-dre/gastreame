@@ -2,35 +2,77 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+# Git Working Rules for GamStreame
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## General Guidelines
+1. **No direct modifications to `master` branch**: All changes must be made in feature or bugfix branches.
+2. **Branching strategy**:
+   - Every change must be developed in a separate branch.
+   - Branches should follow the naming convention outlined below.
+3. **Keep commits atomic**:
+   - Write meaningful commit messages.
+   - Avoid committing unrelated changes in a single commit.
+   - e.g "add routing", "fix layout issues", always use the imperative form
+## Branch Naming Conventions
+### Feature Branches
+- When adding a new feature, create a branch in the `feature/` folder with the following format:
+  ```
+  feature/GME-[number]_[short-description]
+  ```
+- Example:
+  ```
+  feature/GME-101_adjust_design
+  ```
+- If no specific label is required, you can use:
+  ```
+  feature/GME-101
+  ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Bugfix Branches
+- When fixing a bug, create a branch in the `bugfix/` folder with the following format:
+  ```
+  bugfix/GME-[number]_[short-description]
+  ```
+- Example:
+  ```
+  bugfix/GME-102_fix_layout
+  ```
+- If no specific label is required, you can use:
+  ```
+  bugfix/GME-102
+  ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Steps for Working on a New Task
+1. **Pull the latest changes from `master`**:
+   ```sh
+   git checkout master
+   git pull origin master
+   ```
+2. **Create a new branch**:
+   ```sh
+   git checkout -b feature/GME-103_new_functionality
+   ```
+3. **Work on the feature or bugfix**:
+   - Use Visual Studio Code as the development environment.
+   - Keep commits focused and meaningful.
+4. **Push changes to the repository**:
+   ```sh
+   git add .
+   git commit -m "Implemented new feature"
+   git push origin feature/GME-103_new_functionality
+   ```
+5. **Merge after approval**:
+   - Once approved, the branch can be merged into `master`.
+   - Delete the branch after merging.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Additional Notes
+- Always keep your branch **up to date** with `master` by regularly pulling changes.
+- If conflicts arise during merging, resolve them before pushing.
+- Use descriptive branch names that clearly state the purpose of the change.
 
-## Learn More
+Following these rules ensures a clean and structured development workflow for GamStreame. 🚀
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To start the project write: 
+```sh
+   npm run dev
+   ```
