@@ -1,9 +1,10 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <p className="text-blue-900 font-bold" >
+    <Button size="lg">
       Gamstreame
-    </p>
+    </Button>
   );
 }
